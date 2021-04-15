@@ -1,0 +1,37 @@
+# ===================================================================
+# Spring Boot specific properties
+# ===================================================================
+
+spring:
+    application:
+        name: api
+
+server:
+    port: 3000
+    servlet:
+        contextPath: /
+
+logging:
+    level:
+        root: INFO
+
+# ===================================================================
+# Application specific properties
+# ===================================================================
+
+application:
+    version: 1.0.0
+    alpha-vantage-api: https://www.alphavantage.co/
+    key: S9I96OJM9FVJE5NB
+
+    swagger:
+        base-package: org.alphavantage.api.web.rest
+        title: ALPHA VANTAGE REST API Services
+        description: The services which are expose API for the ALPHA VANTAGE services
+        version: 1.1
+        terms-of-service-url: Terms of service
+        contact-name: Taras Chornyi
+        contact-url: https://github.com/reftch
+        contact-email: taras.chornyi@gmail.com
+        license: Apache License Version 2.0
+        license-url: https://www.apache.org/licenses/LICENSE-2.0
