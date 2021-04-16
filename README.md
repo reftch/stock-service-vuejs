@@ -5,3 +5,4 @@ This is a custom stock service for receiving a daily quotes and company data fro
 ## Log work
 
 1. Java API service Implementation (14.04.2021): 8h
+2. UI skeleton. Implementation of the automcompletion input field (15.04.2021): 4h 
