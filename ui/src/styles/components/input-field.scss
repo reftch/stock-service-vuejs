@@ -1,0 +1,58 @@
+@use '../colors';
+
+.input-field {
+  position: relative;
+  // top: 0;
+  // user-select: none;
+
+  input {
+    width: 100%;
+    color: var(--color);
+    border: 1px solid var(--selected);
+    border-radius: 3px;
+    color: var(--color);
+    padding: 10px 10px 8px 10px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--background-input);
+  }
+
+  &-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--selected);
+    border-radius: 4px;
+    border-top: 0;
+    color: var(--color);
+    background-color: var(--background-input);
+    transition: all 0.4s;
+    z-index: 200;
+    @include regular-shadow;
+  }
+
+  &-item {
+    position: relative;
+    display: block;
+    padding: 0 10px 0 10px;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  &-symbol {
+    font-weight: 600;
+  }
+
+  &-item:hover {
+    cursor: pointer;
+    color: var(--primary);
+    background-color: var(--background-button-hover);
+  }
+
+
+}
