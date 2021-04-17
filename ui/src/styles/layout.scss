@@ -24,8 +24,30 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 700px;
+  -webkit-appearance:none;
+  min-width: 320px;
 }
+
+.title {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      padding: 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+
+  &-part {
+    flex: 50%;
+  }
+}
+
 
 ::-webkit-input-placeholder { /* WebKit browsers */
   text-transform: none;
@@ -43,6 +65,32 @@ body {
   text-transform: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 320px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .header-input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    flex-direction: row;
+
+    &-part {
+      flex: 50%;
+    }
+    
+    .chart-area {
+      width: calc(100vw - 100vw/2);
+      // height: 500px;
+    }
+  }
+
+  .header-input {
+    width: 560px;
+  }
 
 }

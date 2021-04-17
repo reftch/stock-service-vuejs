@@ -4,11 +4,6 @@ import store from './store'
 import focus from './directives/focus';
 import useComponents from './components'
 
-// createApp(App)
-//   .use(store)
-//   .use(useComponents)
-//   .mount('#app')
-
 const instance = createApp(App);
 
 instance.directive('focus', focus);

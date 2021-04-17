@@ -1,12 +1,18 @@
 
 /* eslint-disable */
 
+import Chart from './chart';
+import Dropdown from './dropdown';
 import Header from './header';
 import InputField from './input-field';
+import Table from './table';
 
 const components: any = {
+  cChart: Chart,
+  cDropdown: Dropdown,
   cHeader: Header,
   cInputField: InputField,
+  cTable: Table,
 }
 
 const useComponents = {

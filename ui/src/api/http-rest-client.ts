@@ -2,7 +2,7 @@ import Axios, { AxiosError } from 'axios';
 
 export class HttpRestClient {
 
-  protected backendUrl = "http://localhost:3000/api/v1";
+  protected backendUrl = "http://192.168.178.43:3000/api/v1";
 
   private axios = Axios.create();
 

@@ -4,7 +4,7 @@
       type="text"
       v-focus
       :value="getValue"
-      placeholder="Select the Company..."
+      placeholder="Select a Company..."
       @keyup="keyUp"
     />
     <div v-show="showOptions" class="input-field-options">
@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-import { CompanyState } from "@/model";
 import { computed, defineComponent, ref } from "vue";
+import { MatchesState } from "@/model";
 import { useStore } from "vuex";
 
 export default defineComponent({
@@ -30,7 +30,6 @@ export default defineComponent({
   },
   props: {
     modelValue: { default: "" },
-    // options: Array,
   },
   setup(props, context) {
     const store = useStore();
@@ -38,28 +37,29 @@ export default defineComponent({
     const isTimeout = ref(false);
     const options = computed(() => store.getters["companies/getItems"]);
 
-    // const options = [
-    //   { symbol: 'AA', name: 'Alcoa Corp'},
-    //   { symbol: 'AAA', name: 'AAF First Priority CLO Bond ETF'},
-    //   { symbol: 'AA2.FRK', name: 'Amada Co.'},
-    //   { symbol: 'AA4.FRK', name: 'Falck Renewables S.p.A'},
-    //   { symbol: 'AA4.LON', name: 'Amedeo Air Four Plus Limited'},
-    //   { symbol: 'AA9.FRK', name: 'Alfa Laval AB (publ)'},
-    //   { symbol: 'AAAAX', name: 'DWS RREEF REAL ASSETS FUND CLASS A ssssssssssddddddddddddd'},
-    //   { symbol: 'AAACX', name: ''},
-    //   { symbol: 'AAADX', name: 'ALPINE RISING DIVIDEND FUND CLASS A'},
-    //   { symbol: 'AAPL', name: 'Apple Inc.'},
-    // ];
+    const selectItem = async (item: MatchesState) => {
+      context.emit('update:modelValue', item.symbol);
+      showOptions.value = false;
+      await store.dispatch(`companies/setCompany`, item);
+      store.dispatch(`companies/reset`);
+    }
 
     // eslint-disable-next-line 
     const keyUp = async (event: any) => {
       context.emit('update:modelValue', event.target.value);
 
       showOptions.value = event.target.value !== '';
-      if (event.key === 'Escape' || event.key === 'Enter') {
+      if (event.key === 'Escape') {
         showOptions.value = false;
-        store.dispatch(`companies/reset`);
-      } 
+        // store.dispatch(`companies/reset`);
+      } else if (event.key === 'Enter') {
+        showOptions.value = false;
+        selectItem({ symbol: event.target.value })
+      }
+
+      if (event.target.value === '') {
+         store.dispatch(`companies/reset`);
+      }
 
       if (showOptions.value) {
         if (!isTimeout.value) {
@@ -69,16 +69,9 @@ export default defineComponent({
               store.dispatch(`companies/fetch`, event.target.value);
             }
             isTimeout.value = false;
-          }, 200);
+          }, 500);
         }
       }
-    }
-
-    const selectItem = (item: CompanyState) => {
-      context.emit('update:modelValue', item.symbol);
-      showOptions.value = false;
-      store.dispatch(`companies/setItem`, item);
-      store.dispatch(`companies/reset`);
     }
 
     return {

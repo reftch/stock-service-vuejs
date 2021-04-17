@@ -14,6 +14,7 @@ export default defineComponent({
   name: "Header",
   setup() {
     const keywords = ref('');
+
     // const store = useStore();
 
     // const keyUp = () => {
