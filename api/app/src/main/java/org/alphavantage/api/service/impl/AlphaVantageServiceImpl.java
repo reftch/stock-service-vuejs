@@ -2,6 +2,7 @@ package org.alphavantage.api.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
+import org.alphavantage.api.dto.CompanyDTO;
 import org.alphavantage.api.dto.DailyPricesDTO;
 import org.alphavantage.api.dto.ResponseDTO;
 import org.alphavantage.api.service.AlphaVantageService;
@@ -21,10 +22,20 @@ public class AlphaVantageServiceImpl extends CommonService implements AlphaVanta
 
     @Override
     public ResponseDTO getCompanies(String keywords) {
-        val response = getResponseDTO("/companies");
+        val response = getResponseDTO("/search");
         val companies = compositeService.getCompanies(keywords);
         if (companies != null) {
             response.setData(companies);
+        }
+        return response;
+    }
+
+    @Override
+    public ResponseDTO<CompanyDTO> getCompany(String symbol) {
+        val response = getResponseDTO("/company");
+        val company = compositeService.getCompany(symbol);
+        if (company != null) {
+            response.setData(company);
         }
         return response;
     }

@@ -10,7 +10,7 @@
       <c-chart></c-chart>
     </div>
     <div class="content-part">
-      <c-table   
+      <c-table
         :item="company"
         :columns="columns"
       />

@@ -1,8 +1,9 @@
 import Axios, { AxiosError } from 'axios';
+import { RestClient } from './rest-client';
 
-export class HttpRestClient {
+export class HttpRestClient implements RestClient {
 
-  protected backendUrl = "http://192.168.178.43:3000/api/v1";
+  protected backendUrl = "http://localhost:3000/api/v1";
 
   private axios = Axios.create();
 

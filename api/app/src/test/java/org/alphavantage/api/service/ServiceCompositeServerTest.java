@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.reflect.Array;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -46,10 +45,10 @@ public class ServiceCompositeServerTest {
         }
     }
 
-    private List<CompaniesDTO.CompanyDTO> getCompanies() {
+    private List<CompaniesDTO.PriceDTO> getCompanies() {
         return IntStream.range(0, 1)
                 .mapToObj(i -> {
-                    CompaniesDTO.CompanyDTO dto = CompaniesDTO.CompanyDTO.builder()
+                    CompaniesDTO.PriceDTO dto = CompaniesDTO.PriceDTO.builder()
                             .symbol("TESO")
                             .name("Tesco Corporation USA")
                             .type("Equity")

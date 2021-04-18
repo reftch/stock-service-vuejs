@@ -1,7 +1,6 @@
 package org.alphavantage.api.web.rest;
 
 import org.alphavantage.api.config.ApplicationProperties;
-import org.alphavantage.api.dto.InfoDTO;
 import org.alphavantage.api.service.InfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

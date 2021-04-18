@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import { HttpRestClient } from "@/api/http-rest-client";
+import { RestClientRegistry } from "@/api/rest-client-registry";
 import { CompaniesState, CompanyState, MatchesState, PriceState } from "@/model";
 import { ActionContext } from "vuex";
 import { EntityFactory } from "../entity-factory";
@@ -33,7 +34,8 @@ const getters = {
 }
 
 // actions
-const client = new HttpRestClient();
+// const client = new HttpRestClient();
+const client = RestClientRegistry.getClient();
 
 const actions = {
 
@@ -47,7 +49,7 @@ const actions = {
   },
 
   async fetchPrices({ dispatch, commit, state, rootGetters }: ActionContext<CompaniesState, {}>, company: string) {
-    await client.fetch(`prices?company=${company}`).then(response => {
+    await client.fetch(`prices?symbol=${company}`).then(response => {
       if (response) {
         const items = response.data.data.prices.map((i: any) => EntityFactory.getEntity('price', i));
         commit('setPrices', items)

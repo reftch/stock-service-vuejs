@@ -45,7 +45,6 @@ export default defineComponent({
           data: [],
           fill: true,
           borderColor: "#0399f7",
-          // backgroundColor: "#f2f6fc",
           lineTension: 0.1,
           borderWidth: 3,
         },
@@ -85,17 +84,23 @@ export default defineComponent({
       chart.value.update();
     }
 
+    watch((dates), (newDates) => {
+      date.value = newDates.length > 0 ? newDates[0] : 'Daily prices...';
+      setDate();        
+    })
+
     onMounted(() => {
       const ctx = document.getElementById("id-chart");
       if (ctx) {
         chart.value = new Chart(ctx, config);
       }
-    });
 
-    watch((dates), (newDates) => {
-      date.value = newDates.length > 0 ? newDates[0] : 'Daily prices...';
-      setDate();        
-    })
+      if (dates.value.length > 0) {
+        date.value = dates.value[0]
+        setDate();        
+      }
+
+    });
 
     return {
       date,

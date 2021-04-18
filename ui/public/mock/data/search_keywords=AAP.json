@@ -1,0 +1,127 @@
+{
+    "jsonapi": {
+        "version": "1.1"
+    },
+    "meta": {
+        "build": "2021-04-18T08:31:24.369932",
+        "api": "v1",
+        "version": "1.0.0"
+    },
+    "links": {
+        "self": "/search"
+    },
+    "data": {
+        "bestMatches": [
+            {
+                "symbol": "AAP",
+                "name": "Advance Auto Parts Inc",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "1.0000"
+            },
+            {
+                "symbol": "AAPC",
+                "name": "Atlantic Alliance Partnership Corp",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.8571"
+            },
+            {
+                "symbol": "AAPH",
+                "name": "Amer PetroHunter Inc",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.8571"
+            },
+            {
+                "symbol": "AAPJ",
+                "name": "AAP Inc",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.8571"
+            },
+            {
+                "symbol": "AAPL",
+                "name": "Apple Inc",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.8571"
+            },
+            {
+                "symbol": "AAPAX",
+                "name": "AMERICAN BEACON RETIREMENT INCOME AND APPRECIATION FUND A CLASS",
+                "type": "Mutual Fund",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.7500"
+            },
+            {
+                "symbol": "AAPCF",
+                "name": "Atlantic Alliance Partnership Corp",
+                "type": "Equity",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.7500"
+            },
+            {
+                "symbol": "AAPEX",
+                "name": "Aberdeen Asia-Pacific (ex-Japan) Equity Fund Institutional Service Cla",
+                "type": "Mutual Fund",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.7500"
+            },
+            {
+                "symbol": "AAPIX",
+                "name": "Aberdeen Asia-Pacific (ex-Japan) Equity Fund Institutional Class",
+                "type": "Mutual Fund",
+                "region": "United States",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-04",
+                "currency": "USD",
+                "matchScore": "0.7500"
+            },
+            {
+                "symbol": "AAP-H.TRV",
+                "name": "Alpha Peak Leisure Inc",
+                "type": "Equity",
+                "region": "Toronto Venture",
+                "marketOpen": "09:30",
+                "marketClose": "16:00",
+                "timezone": "UTC-05",
+                "currency": "CAD",
+                "matchScore": "0.6000"
+            }
+        ]
+    }
+}

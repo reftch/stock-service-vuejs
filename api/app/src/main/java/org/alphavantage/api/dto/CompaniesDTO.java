@@ -15,13 +15,13 @@ import java.util.List;
 public class CompaniesDTO implements DataObject {
 
     @JsonProperty(value = "bestMatches")
-    private List<CompanyDTO> bestMatches;
+    private List<PriceDTO> bestMatches;
 
     @Data
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class CompanyDTO  {
+    public static class PriceDTO {
 
         @JsonProperty(value = "symbol")
         private String symbol;

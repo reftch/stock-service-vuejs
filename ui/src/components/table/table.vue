@@ -1,7 +1,7 @@
 <template>
   <div class="chart-area">
     <div class="table">
-      <div class="table-heading">
+      <div v-if="columns" class="table-heading">
         <div
           v-for="column in columns"
           :key="column"
@@ -21,7 +21,7 @@
           <div class="table-cell-parameter">{{ propertyName }}</div>
         </div>
         <div class="table-cell">
-          <div>{{ value }}</div>
+          <div class="table-cell-text">{{ value }}</div>
         </div>
       </div>
     </div>

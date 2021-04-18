@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-input">
-      <c-input-field v-model="keywords"></c-input-field>
+      <c-input-field id="id-keywords" v-model="keywords"></c-input-field>
     </div>
   </div>
 </template>
