@@ -27,16 +27,11 @@ For visualization data we need to choice an interesting us company. Each company
 
 After the company was choose user have the ability to see the last daily company's stocks.
 
-![An image](images/chart.png)
+![An image](images/web.png)
 
-After the first loading company'S data the latest respective daily stock quotes are draw by chart component. At the same time user has always the possibility to choosing the previous dates stock quotes:
-
-![An image](images/dropdown.png)
-
+After the first loading company'S data the latest respective daily stock quotes are draw by chart component. At the same time user has always the possibility to choosing the previous dates stock quotes.
 
 In second part of the screen user have the ability to see overall basic information about the company.  
-
-![An image](images/table.png)
 
 Layout of the front end part is fully responsive and implemented as a mobile-friendly web application.
 
