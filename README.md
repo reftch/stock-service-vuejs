@@ -14,9 +14,9 @@ On this page:
 
 ## Introduction
 
-This is a custom stock service for receiving a daily stock quotes and company data from the [AlphaVantage](https://www.alphavantage.co/). **Stock service** project contains 2 parts: server side and front end for visualization company's stock data. Server side is a Java application based on Spring Boot 2.4.4 ecosystem and implement a proxy service for the connection to the external API. 
+This is a custom stock service for receiving a daily stock quotes and company data from the [AlphaVantage](https://www.alphavantage.co/) public service. **Stock service** project contains 2 parts: server side and front end for visualization company's stock data. Server side is a Java application based on Spring Boot 2.4.4 ecosystem and implement a proxy service for the connection to the external API. 
 
-This service aggregates a data fot the front-end application as one response per company. 
+This service aggregates a data for the front-end application as one response per company. 
 
 ## How to work with UI
 
@@ -25,13 +25,13 @@ For visualization data we need to choice an interesting us company. Each company
 ![An image](images/input-field.png)
 
 
-After the company was choose user have the ability to see the last daily company's stocks.
+After the company was chosen user have the ability to see the last daily company's stocks.
 
 ![An image](images/web.png)
 
-After the first loading company'S data the latest respective daily stock quotes are draw by chart component. At the same time user has always the possibility to choosing the previous dates stock quotes.
+After the first loading company's data the latest respective daily stock quotes are draw by chart component. At the same time user has always the possibility to choosing the previous dates stock quotes.
 
-In second part of the screen user have the ability to see overall basic information about the company.  
+In second part of the screen user has the ability to see overall basic information about the company.  
 
 Layout of the front end part is fully responsive and implemented as a mobile-friendly web application.
 
@@ -39,7 +39,7 @@ Layout of the front end part is fully responsive and implemented as a mobile-fri
 
 ## Configure application.yml
 
-Below section describes how to configure application.yml file to override the default values.
+Below section describes how to configure **application.yml** file to override the default values.
 
 Spring Boot Application name:
 
@@ -78,7 +78,7 @@ Stock Service Application properties:
 application:
     version: 1.0.0
     alpha-vantage-api: https://www.alphavantage.co/
-    key: S9I96OJM9FVJE5NB
+    key: someSecretKey
 ```
 
 Open API Configuration Properties:
@@ -113,13 +113,13 @@ This service has ability to be started with a single Gradle command:
 
 ### Swagger UI
 
-This service also has the ability to get access for service from the Swagger UI console:
+This service also has the ability to get access for service API from the Swagger UI console:
 
 [**http://localhost:3000/swagger-ui.html**](http://localhost:3000/swagger-ui.html)
 
 ### UI part
 
-UI part is based on the VueJS 3 with supporting Typescript. [Axios](https://github.com/axios/axios) library is used as a Http client of the server side and [Chart.js](https://www.chartjs.org/) for representing the company daily quote stocks. 
+UI part is based on the VueJS 3 with supporting Typescript. [Axios](https://github.com/axios/axios) library is used as a **http** client of the server side and [Chart.js](https://www.chartjs.org/) is used for representing the company daily quote stocks. 
 
 For running client part we need import all necessary dependencies and then run the client in the development mode:
 
@@ -128,12 +128,18 @@ For running client part we need import all necessary dependencies and then run t
 
 After starting procedure **Service Stock** application will be accessible here: [http://localhost:8081](http://localhost:8081)
 
-Front end application has also unit tests based on [Jest](https://jestjs.io/) testing framework. [Cypress](https://www.cypress.io/) a next generation front end testing tool built for the modern web and uses in this project as end to end testing. 
+Front end application has also unit tests based on [Jest](https://jestjs.io/) testing framework. [Cypress](https://www.cypress.io/) a next generation front end testing tool built for the modern web and uses in this project as end-to-end testing. 
 
-1. Unit testing: npm run test:unit 
-2. E2E testing: npm run test:e2e
+1. **Unit testing**: npm run test:unit 
+2. **E2E testing**: npm run test:e2e
 
-Integration tests by default will run in the headless mode and uses Electron 78 as a text browser. You can verify the code has worked by opening the Cypress GUI and running a test in headful mode. The browser window should now open with developer tools prominently displayed. In E2E tests the application run in so called *'test'* mode, it means that uses mock http client instead of Axios and all data loads from the local files.  
+Integration tests by default will run in the headless mode and uses Electron 78 as a browser. In this mode Cypress prepared a video o tests in a folder: /test/e2e/videos. 
+
+You can verify the code has worked by opening the Cypress GUI and running a test in headful mode. The browser window should now open with developer tools prominently displayed. In e2e tests the application run in so called *'test'* mode, it means that application uses **mock** http client instead of Axios client and all data loads from the local files: 
+
+- public/mock/data/company_symbol=AAPL.json;
+- public/mock/data/prices_symbol=AAPL.json;
+- public/mock/data/search_keywords=AAP.json.  
 
 ![An image](images/e2e.png)
 

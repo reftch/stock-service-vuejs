@@ -42,5 +42,5 @@ class ApiApplicationTests {
 				.andExpect(content()
 						.string(containsString("{\"prices\":[{\"date\":\"2021-04-13\",\"open\":\"133.0000\",\"high\":\"133.6200\",\"low\":\"130.3800\",\"close\":\"131.1800\",\"volume\":\"8033530\"}]}")));
 	}
-	
+
 }
